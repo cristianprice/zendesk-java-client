@@ -49,7 +49,10 @@ public class SuspendedTicket implements Serializable {
     /* This object explains how the ticket was created */
     private Via via;
 
-    /* The id of the brand this ticket is associated with - only applicable for enterprise accounts */
+    /*
+     * The id of the brand this ticket is associated with - only applicable for
+     * enterprise accounts
+     */
     @JsonProperty("brand_id")
     private Long brandId;
 

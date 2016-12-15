@@ -19,52 +19,52 @@ public class AgentRole {
     private Map<String, Object> configuration;
 
     public Long getId() {
-      return id;
+        return id;
     }
 
-    public void setId( Long id ) {
-      this.id = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
-      return name;
+        return name;
     }
 
-    public void setName( String name ) {
-      this.name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
-      return description;
+        return description;
     }
 
-    public void setDescription( String description ) {
-      this.description = description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @JsonProperty("created_at")
     public Date getCreatedAt() {
-      return createdAt;
+        return createdAt;
     }
 
-    public void setCreatedAt( Date createdAt ) {
-      this.createdAt = createdAt;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     @JsonProperty("updated_at")
     public Date getUpdatedAt() {
-      return updatedAt;
+        return updatedAt;
     }
 
-    public void setUpdatedAt( Date updatedAt ) {
-      this.updatedAt = updatedAt;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public Map<String, Object> getConfiguration() {
-      return configuration;
+        return configuration;
     }
 
-    public void setConfiguration( Map<String, Object> configuration ) {
-      this.configuration = configuration;
+    public void setConfiguration(Map<String, Object> configuration) {
+        this.configuration = configuration;
     }
 }

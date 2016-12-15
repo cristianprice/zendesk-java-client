@@ -108,16 +108,7 @@ public class Identity implements Serializable {
 
     @Override
     public String toString() {
-        return "Identity{" +
-                "id=" + id +
-                ", url='" + url + '\'' +
-                ", userId=" + userId +
-                ", type='" + type + '\'' +
-                ", value='" + value + '\'' +
-                ", verified=" + verified +
-                ", primary=" + primary +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "Identity{" + "id=" + id + ", url='" + url + '\'' + ", userId=" + userId + ", type='" + type + '\'' + ", value='" + value + '\''
+                + ", verified=" + verified + ", primary=" + primary + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 }

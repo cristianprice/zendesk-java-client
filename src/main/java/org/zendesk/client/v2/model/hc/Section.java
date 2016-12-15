@@ -33,7 +33,10 @@ public class Section {
     /** Whether the section is out of date */
     private Boolean outdated;
 
-    /** The position of this section in the section list. By default the section is added to the end of the list */
+    /**
+     * The position of this section in the section list. By default the section
+     * is added to the end of the list
+     */
     private Long position;
 
     /** The ids of all translations of this section */
@@ -146,19 +149,8 @@ public class Section {
 
     @Override
     public String toString() {
-        return "Section{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", locale='" + locale + '\'' +
-                ", sourceLocale='" + sourceLocale + '\'' +
-                ", url='" + url + '\'' +
-                ", htmlUrl='" + htmlUrl + '\'' +
-                ", categoryId='" + categoryId + '\'' +
-                ", outdated=" + outdated +
-                ", position=" + position +
-                ", translation_ids=" + translation_ids +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "Section{" + "id=" + id + ", name='" + name + '\'' + ", locale='" + locale + '\'' + ", sourceLocale='" + sourceLocale + '\''
+                + ", url='" + url + '\'' + ", htmlUrl='" + htmlUrl + '\'' + ", categoryId='" + categoryId + '\'' + ", outdated=" + outdated
+                + ", position=" + position + ", translation_ids=" + translation_ids + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 }

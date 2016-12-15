@@ -19,13 +19,14 @@ public class Schedule implements Serializable {
 
     /**
      * Automatically assigned upon creation
+     * 
      * @return Schedule ID
      */
     public Long getId() {
-      return id;
+        return id;
     }
 
-    public void setId( Long id ) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -36,7 +37,7 @@ public class Schedule implements Serializable {
         return name;
     }
 
-    public void setName( String name ) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -48,7 +49,7 @@ public class Schedule implements Serializable {
         return timeZone;
     }
 
-    public void setTimeZone( String timeZone ) {
+    public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
 
@@ -59,7 +60,7 @@ public class Schedule implements Serializable {
         return intervals;
     }
 
-    public void setIntervals( List<Interval> intervals ) {
+    public void setIntervals(List<Interval> intervals) {
         this.intervals = intervals;
     }
 
@@ -71,7 +72,7 @@ public class Schedule implements Serializable {
         return createdAt;
     }
 
-    public void setCreatedAt( Date createdAt ) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -83,7 +84,7 @@ public class Schedule implements Serializable {
         return updatedAt;
     }
 
-    public void setUpdatedAt( Date updatedAt ) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

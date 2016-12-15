@@ -81,7 +81,6 @@ public class Brand {
     @JsonProperty("signature_template")
     private String signatureTemplate;
 
-
     public Long getId() {
         return id;
     }

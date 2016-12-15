@@ -145,19 +145,8 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", locale='" + locale + '\'' +
-                ", sourceLocale='" + sourceLocale + '\'' +
-                ", url='" + url + '\'' +
-                ", htmlUrl='" + htmlUrl + '\'' +
-                ", outdated=" + outdated +
-                ", position=" + position +
-                ", translation_ids=" + translation_ids +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "Category{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\'' + ", locale='" + locale + '\''
+                + ", sourceLocale='" + sourceLocale + '\'' + ", url='" + url + '\'' + ", htmlUrl='" + htmlUrl + '\'' + ", outdated=" + outdated
+                + ", position=" + position + ", translation_ids=" + translation_ids + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 }

@@ -104,16 +104,8 @@ public class UserField implements SearchResultEntity, Serializable {
 
     @Override
     public String toString() {
-        return "UserField{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", key='" + key + '\'' +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", position=" + position +
-                ", active=" + active +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "UserField{" + "id=" + id + ", type='" + type + '\'' + ", key='" + key + '\'' + ", title='" + title + '\'' + ", description='"
+                + description + '\'' + ", position=" + position + ", active=" + active + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
+                + '}';
     }
 }

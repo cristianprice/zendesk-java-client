@@ -81,8 +81,7 @@ public class RealSmokeTest {
 
     public void assumeHaveTokenOrPassword() {
         assumeThat("We have a username", config.getProperty("username"), notNullValue());
-        assumeThat("We have a token or password", config.getProperty("token") != null || config.getProperty("password") != null, is(
-                true));
+        assumeThat("We have a token or password", config.getProperty("token") != null || config.getProperty("password") != null, is(true));
     }
 
     @After
@@ -96,17 +95,14 @@ public class RealSmokeTest {
     @Test
     public void createClientWithToken() throws Exception {
         assumeHaveToken();
-        instance = new Zendesk.Builder(config.getProperty("url"))
-                .setUsername(config.getProperty("username"))
-                .setToken(config.getProperty("token"))
+        instance = new Zendesk.Builder(config.getProperty("url")).setUsername(config.getProperty("username")).setToken(config.getProperty("token"))
                 .build();
     }
 
     @Test
     public void createClientWithTokenOrPassword() throws Exception {
         assumeHaveTokenOrPassword();
-        final Zendesk.Builder builder = new Zendesk.Builder(config.getProperty("url"))
-                .setUsername(config.getProperty("username"));
+        final Zendesk.Builder builder = new Zendesk.Builder(config.getProperty("url")).setUsername(config.getProperty("username"));
         if (config.getProperty("token") != null) {
             builder.setToken(config.getProperty("token"));
         } else if (config.getProperty("password") != null) {
@@ -120,7 +116,7 @@ public class RealSmokeTest {
         createClientWithTokenOrPassword();
         List<Brand> brands = instance.getBrands();
         assertTrue(brands.iterator().hasNext());
-        for(Brand brand : brands){
+        for (Brand brand : brands) {
             assertThat(brand, notNullValue());
         }
     }
@@ -146,8 +142,8 @@ public class RealSmokeTest {
         createClientWithTokenOrPassword();
         Iterable<TicketForm> ticketForms = instance.getTicketForms();
         assertTrue(ticketForms.iterator().hasNext());
-        for(TicketForm ticketForm : ticketForms){
-        	assertThat(ticketForm, notNullValue());
+        for (TicketForm ticketForm : ticketForms) {
+            assertThat(ticketForm, notNullValue());
         }
     }
 
@@ -156,7 +152,7 @@ public class RealSmokeTest {
     public void getTicketFieldsOnForm() throws Exception {
         createClientWithTokenOrPassword();
         TicketForm ticketForm = instance.getTicketForm(27562);
-        for(Integer id :ticketForm.getTicketFieldIds()){
+        for (Integer id : ticketForm.getTicketFieldIds()) {
             Field f = instance.getTicketField(id);
             assertNotNull(f);
         }
@@ -171,7 +167,8 @@ public class RealSmokeTest {
         for (Target target : instance.getTargets()) {
             assertNotNull(target);
             if (firstTargetId != null) {
-                assertNotEquals(firstTargetId, target.getId()); // check for infinite loop
+                assertNotEquals(firstTargetId, target.getId()); // check for
+                                                                // infinite loop
             } else {
                 firstTargetId = target.getId();
             }
@@ -235,7 +232,7 @@ public class RealSmokeTest {
         createClientWithTokenOrPassword();
         for (Audit a : instance.getTicketAudits(1L)) {
             assertThat(a, notNullValue());
-            assertThat(a.getEvents(), not(Collections.<Event>emptyList()));
+            assertThat(a.getEvents(), not(Collections.<Event> emptyList()));
         }
     }
 
@@ -256,10 +253,8 @@ public class RealSmokeTest {
     @Test
     public void createClientWithPassword() throws Exception {
         assumeHavePassword();
-        instance = new Zendesk.Builder(config.getProperty("url"))
-                .setUsername(config.getProperty("username"))
-                .setPassword(config.getProperty("password"))
-                .build();
+        instance = new Zendesk.Builder(config.getProperty("url")).setUsername(config.getProperty("username"))
+                .setPassword(config.getProperty("password")).build();
         Ticket t = instance.getTicket(1);
         assertThat(t, notNullValue());
         System.out.println(t);
@@ -267,8 +262,7 @@ public class RealSmokeTest {
 
     @Test
     public void createAnonymousClient() {
-        instance = new Zendesk.Builder(config.getProperty("url"))
-                .build();
+        instance = new Zendesk.Builder(config.getProperty("url")).build();
     }
 
     @Test
@@ -276,9 +270,8 @@ public class RealSmokeTest {
     public void createDeleteTicket() throws Exception {
         createClientWithTokenOrPassword();
         assumeThat("Must have a requester email", config.getProperty("requester.email"), notNullValue());
-        Ticket t = new Ticket(
-                new Ticket.Requester(config.getProperty("requester.name"), config.getProperty("requester.email")),
-                "This is a test", new Comment("Please ignore this ticket"));
+        Ticket t = new Ticket(new Ticket.Requester(config.getProperty("requester.name"), config.getProperty("requester.email")), "This is a test",
+                new Comment("Please ignore this ticket"));
         t.setCollaborators(Arrays.asList(new Collaborator("Bob Example", "bob@example.org"), new Collaborator("Alice Example", "alice@example.org")));
         Ticket ticket = instance.createTicket(t);
         System.out.println(ticket.getId() + " -> " + ticket.getUrl());
@@ -310,25 +303,25 @@ public class RealSmokeTest {
         Ticket ticket;
         long firstId = Long.MAX_VALUE;
         do {
-            Ticket t = new Ticket(
-                    new Ticket.Requester(config.getProperty("requester.name"), config.getProperty("requester.email")),
+            Ticket t = new Ticket(new Ticket.Requester(config.getProperty("requester.name"), config.getProperty("requester.email")),
                     "This is a test " + UUID.randomUUID().toString(), new Comment("Please ignore this ticket"));
             ticket = instance.createTicket(t);
             System.out.println(ticket.getId() + " -> " + ticket.getUrl());
             assertThat(ticket.getId(), notNullValue());
-                Ticket t2 = instance.getTicket(ticket.getId());
-                assertThat(t2, notNullValue());
-                assertThat(t2.getId(), is(ticket.getId()));
-                t2.setAssigneeId(instance.getCurrentUser().getId());
-                t2.setStatus(Status.CLOSED);
-                instance.updateTicket(t2);
+            Ticket t2 = instance.getTicket(ticket.getId());
+            assertThat(t2, notNullValue());
+            assertThat(t2.getId(), is(ticket.getId()));
+            t2.setAssigneeId(instance.getCurrentUser().getId());
+            t2.setStatus(Status.CLOSED);
+            instance.updateTicket(t2);
             assertThat(ticket.getSubject(), is(t.getSubject()));
             assertThat(ticket.getRequester(), nullValue());
             assertThat(ticket.getRequesterId(), notNullValue());
             assertThat(ticket.getDescription(), is(t.getComment().getBody()));
             assertThat(instance.getTicket(ticket.getId()), notNullValue());
             firstId = Math.min(ticket.getId(), firstId);
-        } while (ticket.getId() < firstId + 200L); // seed enough data for the paging tests
+        } while (ticket.getId() < firstId + 200L); // seed enough data for the
+                                                   // paging tests
     }
 
     @Test
@@ -346,7 +339,7 @@ public class RealSmokeTest {
         createClientWithTokenOrPassword();
         String requesterEmail = config.getProperty("requester.email");
         assumeThat("Must have a requester email", requesterEmail, notNullValue());
-        for (User user : instance.getSearchResults(User.class, "requester:"+requesterEmail)) {
+        for (User user : instance.getSearchResults(User.class, "requester:" + requesterEmail)) {
             assertThat(user.getEmail(), is(requesterEmail));
         }
     }
@@ -551,7 +544,6 @@ public class RealSmokeTest {
             }
         }
 
-
         JobStatus result1 = instance.createOrganizations(orgs.subList(0, 2));
         JobStatus result2 = instance.createOrganizations(orgs.subList(2, 5));
 
@@ -599,7 +591,7 @@ public class RealSmokeTest {
         int count = 0;
         for (Article t : instance.getArticles()) {
             assertThat(t.getTitle(), notNullValue());
-            if (++count > 40) {  // Check enough to pull 2 result pages
+            if (++count > 40) { // Check enough to pull 2 result pages
                 break;
             }
         }
@@ -631,7 +623,8 @@ public class RealSmokeTest {
     public void getArticleTranslations() throws Exception {
         createClientWithTokenOrPassword();
         int articleCount = 0;
-        int translationCount = 0;  // Count total translations checked, not per-article
+        int translationCount = 0; // Count total translations checked, not
+                                  // per-article
         for (Article art : instance.getArticles()) {
             assertNotNull(art.getId());
             if (++articleCount > 10) {
@@ -679,7 +672,7 @@ public class RealSmokeTest {
             if (++categoryCount > 10) {
                 break;
             }
-            for (Translation t: instance.getCategoryTranslations(cat.getId())) {
+            for (Translation t : instance.getCategoryTranslations(cat.getId())) {
                 assertNotNull(t.getId());
                 assertNotNull(t.getTitle());
                 assertNotNull(t.getBody());
@@ -693,7 +686,7 @@ public class RealSmokeTest {
     @Test
     public void getArticlesIncrementally() throws Exception {
         createClientWithTokenOrPassword();
-        final long ONE_WEEK = 7*24*60*60*1000;
+        final long ONE_WEEK = 7 * 24 * 60 * 60 * 1000;
         int count = 0;
         try {
             for (Article t : instance.getArticlesIncrementally(new Date(new Date().getTime() - ONE_WEEK))) {
@@ -705,7 +698,8 @@ public class RealSmokeTest {
         } catch (ZendeskResponseException zre) {
             if (zre.getStatusCode() == 502) {
                 // Ignore, this is an API limitation
-                // A "Bad Gateway" response is returned if HelpCenter was not active at the given time
+                // A "Bad Gateway" response is returned if HelpCenter was not
+                // active at the given time
             } else {
                 throw zre;
             }
@@ -810,7 +804,7 @@ public class RealSmokeTest {
         String externalId = "testCreateOrUpdateUser";
 
         // Clean up to avoid conflicts
-        for (User u: instance.lookupUserByExternalId(externalId)){
+        for (User u : instance.lookupUserByExternalId(externalId)) {
             instance.deleteUser(u.getId());
         }
 

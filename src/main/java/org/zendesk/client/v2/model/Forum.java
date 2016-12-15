@@ -154,9 +154,7 @@ public class Forum implements Serializable {
     }
 
     public static enum Access {
-        EVERYBODY("everybody"),
-        LOGGED_IN("logged-in users"),
-        AGENTS_ONLY("agents only");
+        EVERYBODY("everybody"), LOGGED_IN("logged-in users"), AGENTS_ONLY("agents only");
 
         private final String name;
 

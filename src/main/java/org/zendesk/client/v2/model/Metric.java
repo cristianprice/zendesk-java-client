@@ -54,7 +54,7 @@ public class Metric implements Serializable {
     protected Date createdAt;
     @JsonProperty("updated_at")
     protected Date updatedAt;
-    
+
     public Long getId() {
         return id;
     }
@@ -94,7 +94,7 @@ public class Metric implements Serializable {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-    
+
     public Long getGroupStations() {
         return groupStations;
     }
@@ -178,7 +178,7 @@ public class Metric implements Serializable {
     public ZendeskComboMinutes getReplyTimeMinutes() {
         return replyTimeMinutes;
     }
-    
+
     public ZendeskComboMinutes getFirstResolutionTimeMinutes() {
         return firstResolutionTimeMinutes;
     }
@@ -186,7 +186,7 @@ public class Metric implements Serializable {
     public void setFirstResolutionTimeMinutes(ZendeskComboMinutes firstResolutionTimeMinutes) {
         this.firstResolutionTimeMinutes = firstResolutionTimeMinutes;
     }
-    
+
     public void setReplyTimeMinutes(ZendeskComboMinutes replyTimeMinutes) {
         this.replyTimeMinutes = replyTimeMinutes;
     }
@@ -214,7 +214,7 @@ public class Metric implements Serializable {
     public void setRequesterWaitTimeMinutes(ZendeskComboMinutes requesterWaitTimeMinutes) {
         this.requesterWaitTimeMinutes = requesterWaitTimeMinutes;
     }
-    
+
     public ZendeskComboMinutes getOnHoldTimeMinutes() {
         return onHoldTimeMinutes;
     }
@@ -225,26 +225,12 @@ public class Metric implements Serializable {
 
     @Override
     public String toString() {
-        return "Metric{" +
-                "id=" + id +
-                ", ticketId=" + ticketId +
-                ", groupStations=" + groupStations +
-                ", assigneeStations=" + assigneeStations +
-                ", reopens=" + reopens +
-                ", replies=" + replies +
-                ", assigneeUpdatedAt=" + assigneeUpdatedAt +
-                ", requesterUpdatedAt=" + requesterUpdatedAt +
-                ", lastUpdatedAt=" + lastUpdatedAt +
-                ", initiallyUpdatedAt=" + initiallyUpdatedAt +
-                ", assignedAt=" + assignedAt +
-                ", solvedAt=" + solvedAt +
-                ", lastCommentAddedAt=" + lastCommentAddedAt +
-                ", replyTimeMinutes=" + replyTimeMinutes +
-                ", fullResolutionTimeMinutes=" + fullResolutionTimeMinutes +
-                ", agentWaitTimeMinutes=" + agentWaitTimeMinutes +
-                ", requesterWaitTimeMinutes=" + requesterWaitTimeMinutes +
-                ", createdAt=" + createdAt +
-                '}';
+        return "Metric{" + "id=" + id + ", ticketId=" + ticketId + ", groupStations=" + groupStations + ", assigneeStations=" + assigneeStations
+                + ", reopens=" + reopens + ", replies=" + replies + ", assigneeUpdatedAt=" + assigneeUpdatedAt + ", requesterUpdatedAt="
+                + requesterUpdatedAt + ", lastUpdatedAt=" + lastUpdatedAt + ", initiallyUpdatedAt=" + initiallyUpdatedAt + ", assignedAt="
+                + assignedAt + ", solvedAt=" + solvedAt + ", lastCommentAddedAt=" + lastCommentAddedAt + ", replyTimeMinutes=" + replyTimeMinutes
+                + ", fullResolutionTimeMinutes=" + fullResolutionTimeMinutes + ", agentWaitTimeMinutes=" + agentWaitTimeMinutes
+                + ", requesterWaitTimeMinutes=" + requesterWaitTimeMinutes + ", createdAt=" + createdAt + '}';
     }
 
     public class ZendeskComboMinutes {
@@ -254,7 +240,8 @@ public class Metric implements Serializable {
         @JsonProperty("business")
         protected Long businessMinutes;
 
-        public ZendeskComboMinutes() {};
+        public ZendeskComboMinutes() {
+        };
 
         public Long getCalendarMinutes() {
             return calendarMinutes;

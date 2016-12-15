@@ -13,7 +13,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Zendesk sometimes returns JSON with a String instead of String[] so we need a custom deserializer.
+ * Zendesk sometimes returns JSON with a String instead of String[] so we need a
+ * custom deserializer.
  *
  * @author adavidson
  * @author Johno Crawford (johno@sulake.com)

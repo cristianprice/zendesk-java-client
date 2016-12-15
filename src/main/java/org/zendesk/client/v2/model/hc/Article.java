@@ -30,7 +30,10 @@ public class Article implements SearchResultEntity {
     @JsonProperty("source_locale")
     private String sourceLocale;
 
-    /** The id of the user who wrote the article (set to the user who made the request on create by default) */
+    /**
+     * The id of the user who wrote the article (set to the user who made the
+     * request on create by default)
+     */
     @JsonProperty("author_id")
     private Long authorId;
 
@@ -38,14 +41,22 @@ public class Article implements SearchResultEntity {
     @JsonProperty("comments_disabled")
     private Boolean commentsDisabled;
 
-    /** Whether the source (default) translation of the article is out of date */
+    /**
+     * Whether the source (default) translation of the article is out of date
+     */
     private Boolean outdated;
 
-    /** An array of label names associated with this article. By default no label names are used. Only available on certain plans */
+    /**
+     * An array of label names associated with this article. By default no label
+     * names are used. Only available on certain plans
+     */
     @JsonProperty("label_names")
     private List<String> labelNames;
 
-    /** True if the translation for the current locale is a draft; false otherwise. false by default. */
+    /**
+     * True if the translation for the current locale is a draft; false
+     * otherwise. false by default.
+     */
     private Boolean draft;
 
     /** True if this article is promoted; false otherwise. false by default */
@@ -228,26 +239,10 @@ public class Article implements SearchResultEntity {
 
     @Override
     public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", url='" + url + '\'' +
-                ", htmlUrl='" + htmlUrl + '\'' +
-                ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
-                ", locale='" + locale + '\'' +
-                ", sourceLocale='" + sourceLocale + '\'' +
-                ", authorId=" + authorId +
-                ", commentsDisabled=" + commentsDisabled +
-                ", outdated=" + outdated +
-                ", labelNames=" + labelNames +
-                ", draft=" + draft +
-                ", promoted=" + promoted +
-                ", position=" + position +
-                ", voteSum=" + voteSum +
-                ", voteCount=" + voteCount +
-                ", sectionId=" + sectionId +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "Article{" + "id=" + id + ", url='" + url + '\'' + ", htmlUrl='" + htmlUrl + '\'' + ", title='" + title + '\'' + ", body='" + body
+                + '\'' + ", locale='" + locale + '\'' + ", sourceLocale='" + sourceLocale + '\'' + ", authorId=" + authorId + ", commentsDisabled="
+                + commentsDisabled + ", outdated=" + outdated + ", labelNames=" + labelNames + ", draft=" + draft + ", promoted=" + promoted
+                + ", position=" + position + ", voteSum=" + voteSum + ", voteCount=" + voteCount + ", sectionId=" + sectionId + ", createdAt="
+                + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 }

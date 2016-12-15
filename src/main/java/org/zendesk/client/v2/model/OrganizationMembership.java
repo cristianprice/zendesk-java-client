@@ -19,7 +19,7 @@ public class OrganizationMembership implements SearchResultEntity, Serializable 
     private Date createdAt;
     private Date updatedAt;
 
-    public OrganizationMembership(){
+    public OrganizationMembership() {
     }
 
     @JsonProperty("id")
@@ -78,13 +78,7 @@ public class OrganizationMembership implements SearchResultEntity, Serializable 
 
     @Override
     public String toString() {
-        return "OrganizationMembership{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", organizationId=" + organizationId +
-                ", default=" + _default +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "OrganizationMembership{" + "id=" + id + ", userId=" + userId + ", organizationId=" + organizationId + ", default=" + _default
+                + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 }

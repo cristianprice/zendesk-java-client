@@ -1,9 +1,9 @@
 package org.zendesk.client.v2;
 
-import com.ning.http.client.Response;
-
 import java.io.IOException;
 import java.text.MessageFormat;
+
+import org.asynchttpclient.Response;
 
 /**
  * {@link ZendeskException} specialisation for HTTP non-2xx responses

@@ -43,7 +43,7 @@ public class Subscription {
         return id;
     }
 
-    public void setId( Long id ) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -51,7 +51,7 @@ public class Subscription {
         return url;
     }
 
-    public void setUrl( String url ) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
@@ -59,7 +59,7 @@ public class Subscription {
         return userId;
     }
 
-    public void setUserId( Long userId ) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -67,7 +67,7 @@ public class Subscription {
         return contentId;
     }
 
-    public void setContentId( Long contentId ) {
+    public void setContentId(Long contentId) {
         this.contentId = contentId;
     }
 
@@ -75,7 +75,7 @@ public class Subscription {
         return contentType;
     }
 
-    public void setContentType( String contentType ) {
+    public void setContentType(String contentType) {
         this.contentType = contentType;
     }
 
@@ -83,7 +83,7 @@ public class Subscription {
         return locale;
     }
 
-    public void setLocale( String locale ) {
+    public void setLocale(String locale) {
         this.locale = locale;
     }
 
@@ -91,7 +91,7 @@ public class Subscription {
         return includeComments;
     }
 
-    public void setIncludeComments( boolean includeComments ) {
+    public void setIncludeComments(boolean includeComments) {
         this.includeComments = includeComments;
     }
 
@@ -99,7 +99,7 @@ public class Subscription {
         return createdAt;
     }
 
-    public void setCreatedAt( Date createdAt ) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -107,22 +107,14 @@ public class Subscription {
         return updatedAt;
     }
 
-    public void setUpdatedAt( Date updatedAt ) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 
     @Override
     public String toString() {
-        return "Subscription{" +
-                "id=" + id +
-                ", url='" + url + '\'' +
-                ", userId='" + userId + '\'' +
-                ", contentId='" + contentId + '\'' +
-                ", contentType='" + contentType + '\'' +
-                ", locale='" + locale + '\'' +
-                ", includeComments='" + includeComments + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "Subscription{" + "id=" + id + ", url='" + url + '\'' + ", userId='" + userId + '\'' + ", contentId='" + contentId + '\''
+                + ", contentType='" + contentType + '\'' + ", locale='" + locale + '\'' + ", includeComments='" + includeComments + '\''
+                + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 }

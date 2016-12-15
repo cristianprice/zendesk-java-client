@@ -82,22 +82,11 @@ public class JobStatus<T> implements Serializable {
 
     @Override
     public String toString() {
-        return "JobStatus{" +
-                "id='" + id + '\'' +
-                ", url='" + url + '\'' +
-                ", total=" + total +
-                ", progress=" + progress +
-                ", status=" + status +
-                ", message='" + message + '\'' +
-                ", results=" + results +
-                '}';
+        return "JobStatus{" + "id='" + id + '\'' + ", url='" + url + '\'' + ", total=" + total + ", progress=" + progress + ", status=" + status
+                + ", message='" + message + '\'' + ", results=" + results + '}';
     }
 
     public enum JobStatusEnum {
-        working,
-        failed,
-        completed,
-        killed,
-        queued
+        working, failed, completed, killed, queued
     }
 }

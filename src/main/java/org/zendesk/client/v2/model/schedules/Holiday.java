@@ -19,7 +19,7 @@ public class Holiday implements Serializable {
         return name;
     }
 
-    public void setName( String name ) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -30,7 +30,7 @@ public class Holiday implements Serializable {
         return id;
     }
 
-    public void setId( Long id ) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,7 +39,7 @@ public class Holiday implements Serializable {
         return startDate;
     }
 
-    public void setStartDate( String startDate ) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
@@ -48,7 +48,7 @@ public class Holiday implements Serializable {
         return endDate;
     }
 
-    public void setEndDate( String endDate ) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 }

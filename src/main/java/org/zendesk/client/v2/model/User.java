@@ -168,11 +168,11 @@ public class User extends Collaborator implements SearchResultEntity, Serializab
 
     @JsonProperty("locale")
     public String getLocale() {
-      return locale;
+        return locale;
     }
 
     public void setLocale(String locale) {
-      this.locale = locale;
+        this.locale = locale;
     }
 
     public Boolean getModerator() {

@@ -107,16 +107,8 @@ public class OrganizationField implements SearchResultEntity, Serializable {
 
     @Override
     public String toString() {
-        return "OrganizationField{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", key='" + key + '\'' +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", position=" + position +
-                ", active=" + active +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "OrganizationField{" + "id=" + id + ", type='" + type + '\'' + ", key='" + key + '\'' + ", title='" + title + '\'' + ", description='"
+                + description + '\'' + ", position=" + position + ", active=" + active + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
+                + '}';
     }
 }

@@ -8,9 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * User: Dominic (Dominic.Gunn@sulake.com)
- * Date: 17/12/13
- * Time: 12:43
+ * User: Dominic (Dominic.Gunn@sulake.com) Date: 17/12/13 Time: 12:43
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Macro implements Serializable {
@@ -24,7 +22,8 @@ public class Macro implements Serializable {
     private Date createdAt;
     private Date updatedAt;
 
-    public Macro() {}
+    public Macro() {
+    }
 
     public int getId() {
         return id;

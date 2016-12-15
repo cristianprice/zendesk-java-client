@@ -5,10 +5,7 @@ package org.zendesk.client.v2.model;
  * @since 05/04/2013 08:57
  */
 public enum Priority {
-    URGENT,
-    HIGH,
-    NORMAL,
-    LOW;
+    URGENT, HIGH, NORMAL, LOW;
 
     @Override
     public String toString() {
